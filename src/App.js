@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Card } from './componenets/Card/Card';
+
 import { fetchSummary } from './helpers/fetcher';
 
 import styles from './App.module.css';
@@ -35,7 +37,7 @@ export class App extends React.Component {
 
   render() {
     return (
-      <h1>App</h1>
+      <Card data={this.state.selectedData} country={this.state.country} />
     )
   }
 }
