@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { fetchSummary } from './helpers';
+import { fetchSummary } from './helpers/fetcher';
 
 import styles from './App.module.css';
 
