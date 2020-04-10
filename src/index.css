@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 62.5%;
+  font-weight: 300;
+  color: hsl(0, 0%, 20%);
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+#root {
+  background-color: hsl(280, 20%, 95%);
+  box-shadow: inset 2px 0 20px 0 hsla(0, 0%, 20%, 0.25),
+              inset -2px 0 20px 0 hsla(0, 0%, 20%, 0.25);
+}
