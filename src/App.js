@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Card } from './componenets/Card/Card';
+import { Cards } from './componenets/Card/Card';
 import { CountrySelect } from './componenets/CountrySelect/CountrySelect'
 
-import { fetchSummary } from './helpers/fetcher';
+import { fetchSummary, fetchSummaryFromFile } from './helpers/fetcher';
 
 import styles from './App.module.css';
 
@@ -16,7 +16,9 @@ export class App extends React.Component {
   }
 
   async componentDidMount() {
-    const fetchedData = await fetchSummary();
+    const fetchedData = await fetchSummaryFromFile();
+
+    console.log(fetchedData);
 
     const countries = fetchedData.Countries.map((country) => {
       return {
@@ -77,7 +79,7 @@ export class App extends React.Component {
           countries={this.state.countries}
           handleCountryChange={this.handleCountryChange}
         />
-        <Card data={this.state.selectedData} country={this.state.country} />
+        <Cards data={this.state.selectedData} country={this.state.country} />
       </>
     )
   }
