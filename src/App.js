@@ -73,12 +73,12 @@ export class App extends React.Component {
   };
 
   render() {
-    const activeCases = this.state.data.TotalConfirmed - this.state.data.TotalDeaths - this.state.data.TotalRecovered;
-    const deathRatio = `${((this.state.data.TotalDeaths * 100) / this.state.data.TotalConfirmed).toFixed(2)}%`;
-    const recoveryRatio = `${((this.state.data.TotalRecovered * 100) / this.state.data.TotalConfirmed).toFixed(2)}%`;
-    const date = this.state.data.Date;
+    const activeCases = this.state.selectedData.TotalConfirmed - this.state.selectedData.TotalDeaths - this.state.selectedData.TotalRecovered;
+    const deathRatio = `${((this.state.selectedData.TotalDeaths * 100) / this.state.selectedData.TotalConfirmed).toFixed(2)}%`;
+    const recoveryRatio = `${((this.state.selectedData.TotalRecovered * 100) / this.state.selectedData.TotalConfirmed).toFixed(2)}%`;
+    const date = this.state.selectedData.Date;
 
-    return this.state.data.Date ? (
+    return this.state.selectedData.Date ? (
       <>
         <CountrySelect
           countries={this.state.countries}
@@ -89,9 +89,9 @@ export class App extends React.Component {
           cardClass="confirmed"
           cardDate={date}
           firstDataLabel="From The Beginning:"
-          firstData={this.state.data.TotalConfirmed}
+          firstData={this.state.selectedData.TotalConfirmed}
           secondDataLabel="Last Day:"
-          secondData={this.state.data.NewConfirmed}
+          secondData={this.state.selectedData.NewConfirmed}
           thirdDataLabel="Active Cases:"
           thirdData={activeCases}
         />
@@ -100,9 +100,9 @@ export class App extends React.Component {
           cardClass="recovered"
           cardDate={date}
           firstDataLabel="From The Beginning:"
-          firstData={this.state.data.TotalRecovered}
+          firstData={this.state.selectedData.TotalRecovered}
           secondDataLabel="Last Day:"
-          secondData={this.state.data.NewRecovered}
+          secondData={this.state.selectedData.NewRecovered}
           thirdDataLabel="Recovery Ratio:"
           thirdData={recoveryRatio}
         />
@@ -111,9 +111,9 @@ export class App extends React.Component {
           cardClass="deaths"
           cardDate={date}
           firstDataLabel="From The Beginning:"
-          firstData={this.state.data.TotalDeaths}
+          firstData={this.state.selectedData.TotalDeaths}
           secondDataLabel="Last Day:"
-          secondData={this.state.data.NewDeaths}
+          secondData={this.state.selectedData.NewDeaths}
           thirdDataLabel="Death Ratio:"
           thirdData={deathRatio}
         />
