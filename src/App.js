@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Cards } from './componenets/Card/Card';
-import { CountrySelect } from './componenets/CountrySelect/CountrySelect'
+import { Card } from './componenets/Card/Card';
+import { CountrySelect } from './componenets/CountrySelect/CountrySelect';
 
 import { fetchSummary, fetchSummaryFromFile } from './helpers/fetcher';
 
@@ -12,8 +12,8 @@ export class App extends React.Component {
     data: {},
     countries: [],
     selectedData: {},
-    selectedCountry: 'global'
-  }
+    selectedCountry: 'global',
+  };
 
   async componentDidMount() {
     const fetchedData = await fetchSummaryFromFile();
@@ -25,8 +25,8 @@ export class App extends React.Component {
         countryCode: country.CountryCode,
         countryName: country.Country,
         countrySlug: country.Slug,
-      }
-    })
+      };
+    });
 
     const global = fetchedData.Global;
     global.Date = fetchedData.Date;
@@ -34,7 +34,7 @@ export class App extends React.Component {
     this.setState({
       countries,
       data: fetchedData,
-      selectedData: global
+      selectedData: global,
     });
   }
 
@@ -63,7 +63,7 @@ export class App extends React.Component {
         TotalConfirmed,
         TotalDeaths,
         TotalRecovered,
-      }
+      };
     }
 
     this.setState({
@@ -73,14 +73,52 @@ export class App extends React.Component {
   };
 
   render() {
-    return (
+    const activeCases = this.state.data.TotalConfirmed - this.state.data.TotalDeaths - this.state.data.TotalRecovered;
+    const deathRatio = `${((this.state.data.TotalDeaths * 100) / this.state.data.TotalConfirmed).toFixed(2)}%`;
+    const recoveryRatio = `${((this.state.data.TotalRecovered * 100) / this.state.data.TotalConfirmed).toFixed(2)}%`;
+    const date = this.state.data.Date;
+
+    return this.state.data.Date ? (
       <>
         <CountrySelect
           countries={this.state.countries}
           handleCountryChange={this.handleCountryChange}
         />
-        <Cards data={this.state.selectedData} country={this.state.country} />
+        <Card
+          cardTitle="infected"
+          cardClass="confirmed"
+          cardDate={date}
+          firstDataLabel="From The Beginning:"
+          firstData={this.state.data.TotalConfirmed}
+          secondDataLabel="Last Day:"
+          secondData={this.state.data.NewConfirmed}
+          thirdDataLabel="Active Cases:"
+          thirdData={activeCases}
+        />
+        <Card
+          cardTitle="recovered"
+          cardClass="recovered"
+          cardDate={date}
+          firstDataLabel="From The Beginning:"
+          firstData={this.state.data.TotalRecovered}
+          secondDataLabel="Last Day:"
+          secondData={this.state.data.NewRecovered}
+          thirdDataLabel="Recovery Ratio:"
+          thirdData={recoveryRatio}
+        />
+        <Card
+          cardTitle="deaths"
+          cardClass="deaths"
+          cardDate={date}
+          firstDataLabel="From The Beginning:"
+          firstData={this.state.data.TotalDeaths}
+          secondDataLabel="Last Day:"
+          secondData={this.state.data.NewDeaths}
+          thirdDataLabel="Death Ratio:"
+          thirdData={deathRatio}
+        />
       </>
     )
+    : null
   }
 }
