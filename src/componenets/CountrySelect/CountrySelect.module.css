@@ -1,0 +1,25 @@
+.countrySelect {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2.5rem 1rem ;
+  margin: 0 auto;
+}
+
+.label {
+  display: block;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+
+.select {
+  width: 100%;
+  height: 4rem;
+  border: 1px solid hsl(0, 0%, 20%);
+  border-radius: 5px;
+  padding: 0 1rem;
+  background-color: white;
+}
