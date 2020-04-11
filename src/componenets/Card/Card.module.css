@@ -1,0 +1,126 @@
+.card {
+  width: 100%;
+  margin-top: 2.5rem;
+  border-width: 1px;
+  border-bottom: 5px;
+  border-style: solid;
+  border-radius: 2px;
+  background-color: hsl(280, 20%, 95%);
+  box-shadow: 0 5px 10px 0 hsla(0, 0%, 20%, 0.5);
+}
+
+.cardBar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: 5rem;
+  color: white;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.cardIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: hsl(280, 20%, 95%);
+  font-size: 2.5rem;
+}
+
+.cardTitle,
+.cardDate {
+  margin-left: 1rem;
+  font-size: 2.5rem;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.cardDate {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.cardContent {
+  padding: 2rem;
+  font-size: 1.6rem;
+  font-variant: small-caps;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+.cardRow {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-bottom: 1.5rem;
+}
+
+.cardRow:last-child {
+  margin-bottom: 0;
+}
+
+/* .cardData:last-child {
+  font-weight: 700;
+} */
+
+.confirmedBackground {
+  background-color: hsl(348, 100%, 70%);
+}
+
+.confirmedBorder {
+  border-color: hsl(348, 100%, 70%);
+}
+
+.confirmedText {
+  color: hsl(348, 100%, 70%);
+}
+
+.recoveredBackground {
+  background-color: hsl(164, 47%, 52%);
+}
+
+.recoveredBorder {
+  border-color: hsl(164, 47%, 52%);
+}
+
+.recoveredText {
+  color: hsl(164, 47%, 52%);
+}
+
+.deathsBackground {
+  background-color: hsl(0, 0%, 20%);
+}
+
+.deathsBorder {
+  border-color: hsl(0, 0%, 20%);
+}
+
+.deathsText {
+  color: hsl(0, 0%, 20%);
+}
+
+.activeBackground {
+  background-color: hsl(42, 100%, 68%);
+}
+
+.activeBorder {
+  border-color: hsl(42, 100%, 68%);
+}
+
+.activeText {
+  color: hsl(42, 100%, 68%);
+}
