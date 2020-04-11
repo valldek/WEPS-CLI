@@ -1,30 +1,21 @@
 import React from 'react';
 
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import NativeSelect from '@material-ui/core/NativeSelect';
+import styles from './CountrySelect.module.css';
 
-export const CountrySelect = ({ countries, handleCountryChange }) => {
+export const CountrySelect = ({ countries, handleCountryChange, selectedCountry }) => {
   return (
-    <FormControl>
-      <InputLabel htmlFor="country-selector">Select Country</InputLabel>
-      <NativeSelect
-        inputProps={{
-          name: 'country',
-          id: 'country-selector"',
-        }}
-        defaultValue=""
-        onChange={(evt) => handleCountryChange(evt.target.value)}
-      >
-        <option value="global">Global</option>
+    <div className={styles.countrySelect}>
+      <label className={styles.label} htmlFor="country_selector">Select a Country:</label>
+      <select className={styles.select} name="country" id="country_selector" value={selectedCountry} onChange={(evt) => handleCountryChange(evt.target.value)}>
+        <option className={styles.option} value="global">Global</option>
         {countries.length
           ? countries.map((country, idx) => (
-              <option value={country.countrySlug} key={`${idx}_${country.countryCode}`}>
+              <option className={styles.option} value={country.countrySlug} key={`${country.countryCode}`}>
                 {country.countryName}
               </option>
             ))
           : null}
-      </NativeSelect>
-    </FormControl>
+      </select>
+    </div>
   );
 };
