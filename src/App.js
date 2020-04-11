@@ -74,8 +74,8 @@ export class App extends React.Component {
 
   render() {
     const activeCases = this.state.selectedData.TotalConfirmed - this.state.selectedData.TotalDeaths - this.state.selectedData.TotalRecovered;
-    const deathRatio = `${((this.state.selectedData.TotalDeaths * 100) / this.state.selectedData.TotalConfirmed).toFixed(2)}%`;
-    const recoveryRatio = `${((this.state.selectedData.TotalRecovered * 100) / this.state.selectedData.TotalConfirmed).toFixed(2)}%`;
+    const deathRatio = this.state.selectedData.TotalDeaths * 100 / this.state.selectedData.TotalConfirmed;
+    const recoveryRatio = this.state.selectedData.TotalRecovered * 100 / this.state.selectedData.TotalConfirmed;
     const date = this.state.selectedData.Date;
 
     return this.state.selectedData.Date ? (
