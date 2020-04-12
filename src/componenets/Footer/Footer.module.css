@@ -1,0 +1,58 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  background-color: hsl(280, 20%, 95%);
+  box-shadow: 0 2px 20px 0 hsla(0, 0%, 20%, 0.5);
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 20%);
+}
+
+.footer a {
+  color: hsl(0, 0%, 20%);
+}
+
+.footer a:hover {
+  text-decoration: none;
+}
+
+.footerWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerNotes {
+  display: inline-block;
+}
+
+.footerNotes:last-of-type {
+  float:right;
+  padding-right: 2.5rem;
+}
+
+.footerText {
+  display: none;
+  padding-left: 2.5rem;
+}
+
+.footerList {
+  display: inline-block;
+}
+
+.footerList li {
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .footerText {
+    display: inline;
+  }
+
+  .footerList li {
+    padding-left: 2.5rem;
+  }
+}
