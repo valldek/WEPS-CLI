@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Header } from './componenets/Header/Header';
 import { Card } from './componenets/Card/Card';
 import { CountrySelect } from './componenets/CountrySelect/CountrySelect';
 
@@ -80,6 +81,7 @@ export class App extends React.Component {
 
     return this.state.selectedData.Date ? (
       <>
+        <Header />
         <CountrySelect
           countries={this.state.countries}
           handleCountryChange={this.handleCountryChange}
