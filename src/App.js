@@ -3,6 +3,7 @@ import React from 'react';
 import { Header } from './componenets/Header/Header';
 import { Card } from './componenets/Card/Card';
 import { CountrySelect } from './componenets/CountrySelect/CountrySelect';
+import { Footer } from './componenets/Footer/Footer';
 
 import { fetchSummary, fetchSummaryFromFile } from './helpers/fetcher';
 
@@ -119,6 +120,7 @@ export class App extends React.Component {
           thirdDataLabel="Death Ratio:"
           thirdData={deathRatio}
         />
+        <Footer />
       </>
     )
     : null
