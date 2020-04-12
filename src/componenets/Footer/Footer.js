@@ -4,10 +4,11 @@ import { CountrySelect } from '../CountrySelect/CountrySelect';
 
 import styles from './Footer.module.css';
 
-export const Footer = () => {
+export const Footer = ({countries, selectedCountry, handleCountryChange}) => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerWrapper}>
+        <CountrySelect countries={countries} selectedCountry={selectedCountry} handleCountryChange={handleCountryChange}  />
         <div className={styles.footerNotes}>
           <span className={styles.footerText}>Data from:</span>
           <ul className={styles.footerList}>

@@ -83,10 +83,6 @@ export class App extends React.Component {
     return this.state.selectedData.Date ? (
       <>
         <Header />
-        <CountrySelect
-          countries={this.state.countries}
-          handleCountryChange={this.handleCountryChange}
-        />
         <Card
           cardTitle="infected"
           cardClass="confirmed"
@@ -120,7 +116,7 @@ export class App extends React.Component {
           thirdDataLabel="Death Ratio:"
           thirdData={deathRatio}
         />
-        <Footer />
+        <Footer countries={this.state.countries} selectedCountry={this.state.selectedCountry} handleCountryChange={this.handleCountryChange} />
       </>
     )
     : null
