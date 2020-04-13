@@ -1,0 +1,9 @@
+.chartTitle {
+  margin-top: 2.5rem;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 2.5rem;
+  font-variant: small-caps;
+  text-align: center;
+  text-transform: lowercase;
+  color: hsl(0, 0%, 20%);
+}

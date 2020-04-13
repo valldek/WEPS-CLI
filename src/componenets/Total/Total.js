@@ -67,7 +67,7 @@ export const Total = ({ data }) => {
             />
           </div>
           <div className={styles.totalColumn}>
-            <Chart chartTitle="From the beginning" chartType="pie" chartData={totalData} />
+            <Chart chartTitle="From the beginning" chartType="polar" chartData={totalData} />
             <Chart chartTitle={date} chartType="doughnut" chartData={lastDayData} />
           </div>
         </div>
