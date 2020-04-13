@@ -19,6 +19,11 @@ export const Total = ({ data }) => {
       recovered: data.TotalRecovered,
       deaths: data.TotalDeaths,
     };
+    const lastDayData = {
+      confirmed: data.NewConfirmed,
+      recovered: data.NewRecovered,
+      deaths: data.NewDeaths,
+    };
 
     return (
       <section className={styles.total}>
@@ -62,7 +67,8 @@ export const Total = ({ data }) => {
             />
           </div>
           <div className={styles.totalColumn}>
-            <Chart chartTitle="From the beginning" chartData={totalData} />
+            <Chart chartTitle="From the beginning" chartType="pie" chartData={totalData} />
+            <Chart chartTitle={date} chartType="doughnut" chartData={lastDayData} />
           </div>
         </div>
       </section>
