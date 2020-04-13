@@ -26,16 +26,17 @@
 
 .footerNotes {
   display: inline-block;
+  padding-left: 2.5rem;
 }
 
 .footerNotes:last-of-type {
   float:right;
   padding-right: 2.5rem;
+  padding-left: 0;
 }
 
 .footerText {
   display: none;
-  padding-left: 2.5rem;
 }
 
 .footerList {
