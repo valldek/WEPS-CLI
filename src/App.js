@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Header } from './componenets/Header/Header';
 import { Total } from './componenets/Total/Total';
+import { Daily } from './componenets/Daily/Daily';
 import { Footer } from './componenets/Footer/Footer';
 
 import { fetchSummary, fetchSummaryFromFile } from './helpers/fetcher';
@@ -78,6 +79,7 @@ export class App extends React.Component {
       <>
         <Header />
         <Total data={this.state.selectedData} />
+        <Daily country={this.state.selectedCountry}/>
         <Footer
           countries={this.state.countries}
           selectedCountry={this.state.selectedCountry}
