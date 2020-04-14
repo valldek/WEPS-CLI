@@ -25,3 +25,5 @@ yarn-error.log*
 
 # Static data files
 staticDataTotal.json
+staticDailyDataPoland.json
+staticDailyDataGlobal.json
