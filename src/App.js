@@ -7,8 +7,6 @@ import { Footer } from './componenets/Footer/Footer';
 
 import { fetchSummary, fetchSummaryFromFile } from './helpers/fetcher';
 
-import styles from './App.module.css';
-
 export class App extends React.Component {
   state = {
     data: {},

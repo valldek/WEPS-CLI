@@ -149,11 +149,11 @@ export const Daily = ({ country }) => {
             cardClass="recovered"
             cardDate={null}
             firstDataLabel="Deaths:"
-            firstData={(averageDay.deaths)}
+            firstData={formatLargeNumber((averageDay.deaths))}
             secondDataLabel="Confirmed:"
-            secondData={(averageDay.confirmed)}
+            secondData={formatLargeNumber((averageDay.confirmed))}
             thirdDataLabel="Recovered:"
-            thirdData={(averageDay.recovered)}
+            thirdData={formatLargeNumber((averageDay.recovered))}
           />
         </div>
         <div className={styles.totalColumn}>
