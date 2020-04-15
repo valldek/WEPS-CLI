@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 
 import { Doughnut, Polar, Bar, Line } from 'react-chartjs-2';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExpand, faCompress } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Chart.module.css';
 
 export const Chart = ({ chartTitle, chartType, chartData }) => {
+  const [expanded, setExpanded] = useState(false);
+
   const renderChartByType = (type) => {
     const chartColors = [
       'hsl(348, 100%, 70%)',
@@ -200,9 +204,20 @@ export const Chart = ({ chartTitle, chartType, chartData }) => {
         return null;
     }
   };
+
+  const toggleFullScreenChart = () => {
+    setExpanded(!expanded);
+  }
+
   return (
-    <div className={styles.chart}>
+    <div className={ expanded ? `${styles.chart} ${styles.chartExpanded}` : styles.chart}>
       <h3 className={styles.chartTitle}>{chartTitle}</h3>
+      <div className={styles.chartExpandIcon} onClick={toggleFullScreenChart}>
+        {expanded ?
+          <FontAwesomeIcon icon={faCompress} /> :
+          <FontAwesomeIcon icon={faExpand} />
+        }
+      </div>
       {renderChartByType(chartType)}
     </div>
   );
