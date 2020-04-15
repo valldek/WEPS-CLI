@@ -7,7 +7,6 @@ import { fetchDailyData, fetchDailyDataFromFile } from '../../helpers/fetcher';
 import { formatLargeNumber, sortByThreeFactors} from '../../helpers';
 
 import styles from '../Total/Total.module.css';
-import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 export const Daily = ({ country }) => {
   const [dailySummary, setDailySummary] = useState([]);

@@ -1,18 +1,16 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRibbon, faVirus, faHeartbeat } from '@fortawesome/free-solid-svg-icons';
-
-import { formatLargeNumber } from '../../helpers/index';
+import { faHeartbeat, faRibbon, faVirus, faChartBar } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './Card.module.css';
 
 export const Card = ({ cardTitle, cardClass, cardDate, firstData, firstDataLabel, secondData, secondDataLabel, thirdData, thirdDataLabel }) => {
   const border = `${cardClass}Border`;
   const background = `${cardClass}Background`;
-  const text = `${cardClass}Text`;
+  const text = `${cardClass}Text`
 
-  return(
+  return (
     <div className={`${styles.card} ${styles[border]}`}>
       <div className={`${styles.cardBar} ${styles[background]} `}>
         <header className={styles.cardHeader}>
@@ -21,8 +19,9 @@ export const Card = ({ cardTitle, cardClass, cardDate, firstData, firstDataLabel
                 ? <FontAwesomeIcon icon={faVirus} />
                 : cardTitle === 'recovered'
                   ? <FontAwesomeIcon icon={faHeartbeat} />
-                  : <FontAwesomeIcon icon={faRibbon} />
-
+                  : cardTitle === 'deaths'
+                    ? <FontAwesomeIcon icon={faRibbon} />
+                    : <FontAwesomeIcon icon={faChartBar} />
             }
           </div>
           <h3 className={styles.cardTitle}>{cardTitle}</h3>
@@ -32,17 +31,17 @@ export const Card = ({ cardTitle, cardClass, cardDate, firstData, firstDataLabel
       <div className={styles.cardContent}>
         <div className={`${styles.cardRow} ${styles[border]}`}>
           <span className={styles.cardData}>{firstDataLabel}</span>
-          <span className={styles.cardData}>{formatLargeNumber(firstData)}</span>
+          <span className={styles.cardData}>{firstData}</span>
         </div>
         <div className={`${styles.cardRow} ${styles[border]}`}>
           <span className={styles.cardData}>{secondDataLabel}</span>
-          <span className={styles.cardData}>{formatLargeNumber(secondData)}</span>
+          <span className={styles.cardData}>{secondData}</span>
         </div>
         <div className={`${styles.cardRow} ${styles[border]}`}>
           <span className={styles.cardData}>{thirdDataLabel}</span>
-          <span className={styles.cardData}>{formatLargeNumber(thirdData)}</span>
+          <span className={styles.cardData}>{thirdData}</span>
         </div>
       </div>
     </div>
   )
-};
+}
