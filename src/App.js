@@ -18,8 +18,6 @@ export class App extends React.Component {
   async componentDidMount() {
     const fetchedData = await fetchSummaryFromFile();
 
-    console.log(fetchedData);
-
     const countries = fetchedData.Countries.map((country) => {
       return {
         countryCode: country.CountryCode,

@@ -41,7 +41,7 @@ export const Total = ({ data }) => {
               secondDataLabel="Last Day:"
               secondData={formatLargeNumber(data.NewConfirmed)}
               thirdDataLabel="Active Cases:"
-              thirdData={activeCases}
+              thirdData={formatLargeNumber(activeCases)}
             />
             <Card
               cardTitle="recovered"
@@ -52,7 +52,7 @@ export const Total = ({ data }) => {
               secondDataLabel="Last Day:"
               secondData={formatLargeNumber(data.NewRecovered)}
               thirdDataLabel="Recovery Ratio:"
-              thirdData={recoveryRatio}
+              thirdData={formatLargeNumber(recoveryRatio) + '%'}
             />
             <Card
               cardTitle="deaths"
@@ -63,7 +63,7 @@ export const Total = ({ data }) => {
               secondDataLabel="Last Day:"
               secondData={formatLargeNumber(data.NewDeaths)}
               thirdDataLabel="Death Ratio:"
-              thirdData={deathRatio}
+              thirdData={formatLargeNumber(deathRatio) + '%'}
             />
           </div>
           <div className={styles.totalColumn}>
