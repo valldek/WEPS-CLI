@@ -1,13 +1,15 @@
 export const formatLargeNumber = (num) => {
+  if (!num) return 'N/A';
+
   let formattedNumber = num;
-  if (!num) return 0;
 
   if (!Number.isFinite(formattedNumber)) {
-    // if string change it to number else locale will not work
-    console.log(typeof formattedNumber);
+    if (formattedNumber === 'N/A') return formattedNumber;
+
+    formattedNumber = parseFloat(formattedNumber)
   }
 
-  return formattedNumber.toLocaleString('en-GB');
+  return parseFloat(formattedNumber.toFixed(2)).toLocaleString('en-GB');
 }
 
 export const sortByThreeFactors = (arr, factor1, factor2, factor3) => {
