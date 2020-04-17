@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Card } from '../Card/Card';
 import { Chart } from '../Chart/Chart';
 
-import { fetchDailyData, fetchDailyDataFromFile } from '../../helpers/fetcher';
+import { fetchDailyData } from '../../helpers/fetcher';
 import { formatLargeNumber, sortByThreeFactors} from '../../helpers';
 
 import styles from '../Total/Total.module.css';
@@ -16,7 +16,7 @@ export const Daily = ({ country }) => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetchDailyDataFromFile(country);
+      const response = await fetchDailyData(country);
 
       let summaryData = [];
       let dailyData = [];

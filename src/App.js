@@ -5,7 +5,7 @@ import { Total } from './componenets/Total/Total';
 import { Daily } from './componenets/Daily/Daily';
 import { Footer } from './componenets/Footer/Footer';
 
-import { fetchSummary, fetchSummaryFromFile } from './helpers/fetcher';
+import { fetchSummary } from './helpers/fetcher';
 
 export class App extends React.Component {
   state = {
@@ -16,7 +16,7 @@ export class App extends React.Component {
   };
 
   async componentDidMount() {
-    const fetchedData = await fetchSummaryFromFile();
+    const fetchedData = await fetchSummary();
 
     const countries = fetchedData.Countries.map((country) => {
       return {
