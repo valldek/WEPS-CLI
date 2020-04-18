@@ -96,9 +96,9 @@ export const Daily = ({ country }) => {
       setDaily(dailyData);
       setWorstDay(worstDayData.slice(worstDayData.length - 3).reverse());
       setAverageDay({
-        confirmed: (averageConfirmed / summaryData.length).toFixed(2),
-        deaths: (averageDeaths / summaryData.length).toFixed(2),
-        recovered: (averageRecovered / summaryData.length).toFixed(2),
+        confirmed: (averageConfirmed / summaryData.length),
+        deaths: (averageDeaths / summaryData.length),
+        recovered: (averageRecovered / summaryData.length),
       });
     })();
   }, [country]);
